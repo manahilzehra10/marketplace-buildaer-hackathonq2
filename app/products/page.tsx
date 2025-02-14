@@ -17,17 +17,30 @@ export default function ExploreProducts() {
   const [wishlist, setWishlist] = useState<Product[]>([]);
   const [showMoreVisible, setShowMoreVisible] = useState(true);
 
-  useEffect(() => {
-    async function fetchProducts() {
-      const products: Product[] = await client.fetch(allProducts);
-      setAllProducts(products);
-      setDisplayedProducts(products.slice(0, 24));
-      setShowMoreVisible(products.length > 24);
-    }
+  // useEffect(() => {
+  //   async function fetchProducts() {
+  //     const products: Product[] = await client.fetch(allProducts);
+  //     setAllProducts(products);
+  //     setDisplayedProducts(products.slice(0, 24));
+  //     setShowMoreVisible(products.length > 24);
+  //   }
 
-    fetchProducts();
-    setWishlist(getWishlistItems());
-  }, []);
+  //   fetchProducts();
+  //   setWishlist(getWishlistItems());
+  // }, []);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+useEffect(() => {
+  async function fetchProducts() {
+    const products: Product[] = await client.fetch(allProducts);
+    setAllProducts(products);
+    setDisplayedProducts(products.slice(0, 24));
+    setShowMoreVisible(products.length > 24);
+  }
+
+  fetchProducts();
+  setWishlist(getWishlistItems());
+}, []); // ✅ No need to add `allProducts` if it's a constant query
+
 
   const handleAddToCart = (e: React.MouseEvent, product: Product) => {
     e.preventDefault(); // Prevent default link behavior
