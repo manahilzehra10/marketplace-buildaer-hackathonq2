@@ -12,7 +12,7 @@ import { addToCart, addToWishlist, getWishlistItems, removeFromWishlist } from '
 import toast from 'react-hot-toast';
 
 export default function ExploreProducts() {
-  const [allProducts, setAllProducts] = useState<Product[]>([]);
+  const [allProducts, setProducts] = useState<Product[]>([]);
   const [displayedProducts, setDisplayedProducts] = useState<Product[]>([]);
   const [wishlist, setWishlist] = useState<Product[]>([]);
   const [showMoreVisible, setShowMoreVisible] = useState(true);
