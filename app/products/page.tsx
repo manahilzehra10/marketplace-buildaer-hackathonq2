@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { Heart, Eye} from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { client } from '@/sanity/lib/client';
-import { allProducts} from '@/sanity/lib/queries';
+// import { allProducts} from '@/sanity/lib/queries';
 import { Product } from '@/types/product';
 import { urlFor } from '@/sanity/lib/image';
 import Link from 'next/link';
