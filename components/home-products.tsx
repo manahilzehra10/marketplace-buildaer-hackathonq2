@@ -7,7 +7,7 @@ import { client } from '@/sanity/lib/client';
 import { Product } from '@/types/product';
 import { urlFor } from '@/sanity/lib/image';
 import Link from 'next/link';
-import { addToCart, addToWishlist, getWishlistItems, removeFromWishlist } from '@/app/actions/actions';
+import { addToCart, addToWishlist, removeFromWishlist } from '@/app/actions/actions';
 import toast from 'react-hot-toast';
 import { jordanNikeProductsQuery } from '@/sanity/lib/queries';
 
