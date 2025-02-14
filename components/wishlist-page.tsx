@@ -15,7 +15,7 @@ import {
 import { Product } from "@/types/product";
 import { urlFor } from "@/sanity/lib/image";
 import { client } from "@/sanity/lib/client";
-import { allProductsQuery } from "@/sanity/lib/queries";
+import { allProducts } from "@/sanity/lib/queries";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 
@@ -35,7 +35,7 @@ export default function WishlistPage() {
   }, []);
 
   const fetchRecommendedItems = async () => {
-    const products: Product[] = await client.fetch(allProductsQuery);
+    const products: Product[] = await client.fetch(allProducts);
     setRecommendedItems(products.slice(0, 4)); // Get only 4 products for recommendation
   };
 
