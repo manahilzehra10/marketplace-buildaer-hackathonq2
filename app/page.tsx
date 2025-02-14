@@ -1,36 +1,28 @@
-import Image from "next/image";
-import TNAV from "./components/tnav/page";
-import Air from "./components/air/page";
-import SHOES from "./components/shoes/page";
-import Man from "./components/man/page";
-import GEAR from "./components/gearup/page";
-import DONT from "./components/dontmiss/page";
-import ICON from "./components/icon/page";
-import ESSENTIALS from "./components/essential/page";
+import ExploreProducts from "@/components/home-products";
+import Banner from "@/components/banner";
+import Air from "@/components/AirMax";
+import AirHomeProducts from "@/components/air-home-products";
+import ManBanner from "@/components/man-feature";
+import ESSENTIALS from "@/components/The-Essentials";
+import CategorySec from "@/components/Category-sec";
 
 export default function Home() {
   return (
-    <div>
-      <div className="relative z-10">
-        <TNAV />
-      </div>
-      <div className="flex flex-col justify-center items-center mt-2">
-        <div className="w-10/12 h-[90vh] relative">
-          <Image
-            src="/mainshoe.png" 
-            alt="Nike Shoe"
-            layout="fill" 
-            objectFit="contain" 
-          />
-        </div>
-      </div>
-        <Air/>
-      <SHOES/>
-      <Man/>
-      <GEAR/>
-      <DONT/>
-      <ESSENTIALS/>
-      <ICON/>
-    </div>
+   <div>
+    <Banner/>
+    <hr className="bg-black"/>
+    <ExploreProducts/>
+    <hr className="bg-black"/>
+    <Air/>
+    <hr className="bg-black"/>
+    <AirHomeProducts/>
+    <hr className="bg-black"/>  
+    <ManBanner/>
+    <hr className="bg-black"/>  
+    <ESSENTIALS/>
+    <hr className="bg-black"/>  
+    <CategorySec/>
+    <hr className="bg-black"/>  
+   </div>
   );
-}
+};
