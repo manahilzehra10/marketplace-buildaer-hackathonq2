@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { Heart, Eye} from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { client } from '@/sanity/lib/client';
-// import { allProducts} from '@/sanity/lib/queries';
+import { allProducts} from '@/sanity/lib/queries';
 import { Product } from '@/types/product';
 import { urlFor } from '@/sanity/lib/image';
 import Link from 'next/link';
@@ -19,7 +19,7 @@ export default function ExploreProducts() {
 
   useEffect(() => {
     async function fetchProducts() {
-      const products: Product[] = await client.fetch(allProductsQuery);
+      const products: Product[] = await client.fetch(allProducts);
       setAllProducts(products);
       setDisplayedProducts(products.slice(0, 24));
       setShowMoreVisible(products.length > 24);
